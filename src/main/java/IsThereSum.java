@@ -10,6 +10,19 @@ public class IsThereSum {
      * @return true if two separate values in the array add up to a target, false otherwise.
      */
     public boolean check(int[] arr, int target){
+        int i = 0;
+        int j =arr.length - 1;
+        while (i < j) {
+            int tmp = arr[i] + arr[j];
+            if (tmp == target) {
+                System.out.println(arr[i] + "+" + arr[j] + "=" + target);
+                return true;
+            } else if (tmp > target) {
+                j--;
+            } else {
+                i++;
+            }
+        }
         return false;
     }
 }
